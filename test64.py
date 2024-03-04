@@ -29,3 +29,9 @@ if operation == "add":
     y = add(n1, n2)
     print(y)
 
+n7 = int(sys.argv[1])
+operation = sys.argv[2]
+n8 = int(sys.argv[3])
+if operation == "add":
+    y = add(n7, n8)
+    print(y)
