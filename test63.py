@@ -1,31 +1,24 @@
-import re
-import sys
-arn = "abc/fgh"
-print(arn.split("/"))
+import os
 
+def files1(folder):
+    try:
+        files = os.listdir(folder)
+        return files, None
+    except FileNotFoundError:
+        return None, "Folder not found"
+    except PermissionError:
+        return None, "Permission denied"
 
-number1 = 5
-number2 = 6
-tot = number1+number2
-print('exact amount', tot)
+def main():
+    folders = input("Enter a list of folder paths separated by spaces: ").split()
+    for folder in folders:
+        files, error_message = files1(folder)
+        if files:
+            print("Files in:",folder)
+            for file in files:
+                print(file)
+        else:
+            print(error_message)
 
-
-text = "vaishali is good"
-pattern = "vaishali"
-match = re.match(pattern,text)
-if match:
-    print("match found:",match.group())
-else:
-    print("no mactch found")
-
-def add(n1,n4):
-    n3=n1 + n4
-    return n3
-
-n1 = int(sys.argv[1])
-operation = sys.argv[2]
-n2 = int(sys.argv[3])
-if operation == "add":
-    y = add(n1, n2)
-    print(y)
-
+if __name__ == "__main__":
+    main()
