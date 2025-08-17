@@ -3,7 +3,7 @@ str= ["Hello","DevOps","Python"]
 
 result= str[0] + " " + str[1] + " " + str[2]
 
-search=re.search("DevOps1", result)
+search=re.search("DevOps", result)
 if search:
     print("Pattern found:", search.group())
 else:
