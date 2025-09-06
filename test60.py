@@ -17,3 +17,5 @@ print(result.split())
 print("Modified text:", re.sub(str[2], str[0], result))
 print("split_result:",re.split(str[1], result))
 
+test
+
